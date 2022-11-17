@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./characters.component.css']
 })
 export class CharactersComponent implements OnInit {
-
+   array =['DARTH VADER','LUKE SKYWALKER','OBI-WAN KENOBI','YODA']
   constructor() { }
 
   ngOnInit(): void {

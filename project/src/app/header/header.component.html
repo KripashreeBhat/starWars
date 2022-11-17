@@ -4,13 +4,24 @@
     </div>
     
     <div class="navbar" *ngIf="displaynav">
-       
+       <div class="menu">
         <a class="hover" href="#">FILMS</a>
+    </div>
+    <div class="menu">
         <a class="hover" href="#">SPECIES</a>
+    </div>
+    <div class="menu">
         <a class="hover" href="#">PLANETS</a>
-        <a class="hover" href="#" >CHARACTERS</a>
+    </div>
+    <div class="menu" [routerLinkActive]="'active'">
+        <a class="hover" routerLink="/characters"   >CHARACTERS</a>
+    </div>
+    <div class="menu">
         <a class="hover" href="#">STARSHIP</a>
+    </div>
+    <div class="menu">
         <a class="hover" href="#">VEHICLES</a>
+    </div>
     
         <!-- <p>SPECIES</p> -->
     

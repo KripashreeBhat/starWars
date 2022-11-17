@@ -12,7 +12,7 @@ img{
     height:5rem;
 }
 .navbar{
-    /* border:1px solid #fff; */
+    /* border:1px solid red; */
     border-top:1px solid #054979;
     border-bottom: 1px solid #054979;
     width:50%;
@@ -25,8 +25,20 @@ img{
     align-items: center;
     
 }
+.menu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:5vh;
+    width:100%;
+    /* position: absolute; */
+    /* border: 1px solid white; */
+}
+.menu:hover{
+    background-color: rgba(0,171,255,0.4);
+}
  a{
-    margin-left:5%;
+    /* margin-left:5%; */
     /* display: flex; */
     /* align-items: center; */
     font-size:1rem;
@@ -34,21 +46,38 @@ img{
     color:#fff;
     
 }
-
-.species{
-    border:#fff 1px solid; 
-}
-
-a:hover{
-    /* background-color: #00ABFF; */
-    /* width:10%; */
-
-    /* height:50px; */
-    background-color: rgba(0,171,255,0.4);
-    
-}
-.space{
-    margin-left:1%;
+@media(max-width:1068px){
+    .menu{
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height:5vh;
+        margin-left: 1rem;
+        /* height:5vh; */
+        /* width:100%; */
+        /* border: 1px solid white; */
+    }
+    ::-webkit-scrollbar {
+        display: none;
+       
+     }
+     .navbar{
+        /* border:1px solid #fff; */
+        /* border-top:1px solid #054979; */
+        /* border-bottom: 1px solid #054979; */
+        
+        /* margin:auto; */
+        color:white;
+        display: flex;
+        /* width:100%; */
+        /* margin-left: 10%; */
+        justify-content: left;
+        cursor: pointer;
+        overflow-x: scroll;
+        -webkit-overflow-scrolling: auto;
+        
+    }
 }
 @media (max-width:500px){
     .container{
@@ -78,15 +107,14 @@ a:hover{
             -webkit-overflow-scrolling: auto;
             
         }
-       
-        .films{
-            /* margin-left: 1%; */
-            /* border:#fff 1px solid; */
-            /* display: flex; */
-            /* width:250%; */
-            /* justify-content:center; */
-            
-            
+        .menu{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height:5vh;
+            margin-left: 1rem;
+
+            /* border: 1px solid white; */
         }
         ::-webkit-scrollbar {
             display: none;

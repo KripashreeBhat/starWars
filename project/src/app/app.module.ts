@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { CharactersComponent } from './characters/characters.component';
+import { YodaDetailComponent } from './yoda-detail/yoda-detail.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { CharactersComponent } from './characters/characters.component';
     HomeComponent,
     FooterComponent,
     HeaderComponent,
-    CharactersComponent
+    CharactersComponent,
+    YodaDetailComponent
   ],
   imports: [
     BrowserModule,

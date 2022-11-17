@@ -8,3 +8,7 @@ body{
 html{
     font-family: 'Open Sans', sans-serif;
 }
+.active{
+    /* background-color:gray; */
+    background-color: rgba(0,171,255,0.4);
+}
