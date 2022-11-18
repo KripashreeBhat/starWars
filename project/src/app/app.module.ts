@@ -8,7 +8,13 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { CharactersComponent } from './characters/characters.component';
 import { YodaDetailComponent } from './yoda-detail/yoda-detail.component';
-
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CachepipePipe } from './cachepipe.pipe';
+import { CacheApiService } from './cache-api.service';
+import { CacheInterceptor } from './cache.interceptor';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { DataserviceService } from './dataservice.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,14 +22,25 @@ import { YodaDetailComponent } from './yoda-detail/yoda-detail.component';
     FooterComponent,
     HeaderComponent,
     CharactersComponent,
-    YodaDetailComponent
+    YodaDetailComponent,
+    NavBarComponent,
+    CachepipePipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule
   
   ],
-  providers: [],
+  providers: [
+    DataserviceService,
+    CacheApiService,
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass : CacheInterceptor,
+      multi : true,
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

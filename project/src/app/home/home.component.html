@@ -3,7 +3,7 @@
 <div class="container">
     <div class="menu" *ngIf = "display">
     <div class="image">
-        <img src="assets/films_normal.png" alt="films">
+        <img src="assets/films_normal.png"  alt="films">
         <p>FILMS</p>
     </div>
     <div class="image">
@@ -14,7 +14,7 @@
         <img src="assets/planets_normal.png" alt="films">
         <p>PLANETS</p>
     </div>
-    <div class="image">
+    <div class="image" (click)="displaymenu()">
         <img src="assets/characters_normal.png" alt="films">
         <p>PEOPLE</p>
     </div>

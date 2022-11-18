@@ -2,8 +2,8 @@ p{
     color:white;
 }
 .container{
-    /* border: 1px solid white;
-    height:60vh;
+    /* border: 1px solid white; */
+    /* height:60vh;
     width:100%;
     margin-left: auto;
     margin-right:auto;
@@ -19,7 +19,7 @@ p{
     display: grid;
     grid-template-columns: auto auto auto;
     row-gap:50px;
-
+    cursor: pointer;
 }
 p{
     font-size: 0.9rem;
@@ -30,6 +30,8 @@ p{
 img{
     /* width:10%; */
     height:70%;
+}
+img:hover{
 }
 @media(max-width:500px){
     .container{

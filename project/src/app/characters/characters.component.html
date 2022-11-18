@@ -1,32 +1,74 @@
-<div class="container">
-    <!-- <div class="lis" *ngFor="let arr of array">
-    <div class="local">
-        <a href="#">{{arr}}</a>
+<app-nav-bar></app-nav-bar>
+<div class="full" >
+<div class="container" *ngIf="list">
+    <div class="list-items" >
+    <div class="item"  *ngFor = "let list of people.results">
+        <a (click)="display()">{{list.name}}</a>
     </div>
-</div> -->
-    <div class="list-items">
-        <div class="item first">
-        <a href="#">DARTH&nbsp;VADER</a>
-    </div>
-    <div class="item">
-        <a  href="#">LUKE&nbsp;SKYWALKER</a>
-    </div>
-    <div class="item">
-        <a href="#">OBI&nbsp;-&nbsp;WAN&nbsp;KENOBI</a>
-    </div>
-    <div class="item">
-        <a  routerLink="/yoda">YODA</a>
-    </div>
-    <div class="item">
-        <a  href="#">REY</a>
-    </div>
+   
     </div>
     <div class="btn">
         <div class="fn-btn">
-        <button>PREVIOUS</button>
+        <button (click)="previous()">PREVIOUS</button>
     </div>
-   <div class="fn-btn">
-        <button>NEXT</button>
+   <div class="fn-btn" (click)="next()">
+        <button >NEXT</button>
     </div> 
     </div>
 </div>
+
+
+<div class="cont" *ngIf = "details" (click)="displist()">
+    <div class="img-detail">
+     <div class="img">
+         <img src="assets/yoda.jpg" alt="yoda pic" >
+     </div>
+     <div class="detail">
+         <h1>YODA</h1>
+         <section class="scroll">
+             <div class="info">
+                 <p class="key">Designation :</p>
+                 <p class="value">Sentiment</p>
+             </div>
+             <div class="info">
+                 <div class="key">Designation&nbsp;:&nbsp;</div>
+                 <div class="value">Sentiment jiorfjioi ifvdo kolikgdg u ffy j ibh u noj fo hier rim jfhviha mj o</div>
+             </div>
+             <div class="info">
+                 <p class="key">Designation :</p>
+                 <p class="value">Sentiment</p>
+             </div>
+             <div class="info">
+                 <p class="key">Designation :</p>
+                 <p class="value">Sentiment</p>
+             </div>
+             <div class="info">
+                 <p class="key">Designation :</p>
+                 <p class="value">Sentiment</p>
+             </div>
+             <div class="info">
+                 <p class="key">Designation :</p>
+                 <p class="value">Sentiment</p>
+             </div>
+             <div class="info">
+                 <p class="key">Designation :</p>
+                 <p class="value">Sentiment</p>
+             </div>
+             <div class="info">
+ 
+                 <div class="key">Designation&nbsp;:&nbsp;</div>
+                 <div class="value">Sentiment ifnknduyi hyuiw onnis jokingn hi hniugt iput ft ui hgy ug gyufhfhg  s iye9q guy00928 8uhi o</div>
+             </div>
+             <div class="info">
+                 <p class="key">Designation :</p>
+                 <p class="value">Sentiment</p>
+             </div>
+             <div class="info">
+                 <p class="key">Designation :</p>
+                 <p class="value">Sentiment</p>
+             </div>
+ 
+         </section>
+     </div>
+    </div> 
+ </div>
