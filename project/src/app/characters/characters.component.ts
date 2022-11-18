@@ -14,6 +14,7 @@ export class CharactersComponent implements OnInit {
   users : any[] = [];
   people :any;
   nextdata:any;
+  name:any;
   constructor(private data: DataserviceService) { }
 
   ngOnInit(): void {
@@ -21,7 +22,7 @@ export class CharactersComponent implements OnInit {
     this.userSubs = this.data.getPeople(url).subscribe({
       next:(users)=> {
         console.log(users);
-        this.nextdata = users;
+        
         this.people = users;
         // this.people = this.people['results']
 
@@ -63,6 +64,10 @@ next(){
     this.people = data;  
   })
 }
-  
+ storename(name:any){
+ console.log(name);
+ localStorage.setItem('details',JSON.stringify(name))
+ 
+ } 
   
 }

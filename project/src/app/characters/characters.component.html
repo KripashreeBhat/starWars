@@ -3,7 +3,7 @@
 <div class="container" *ngIf="list">
     <div class="list-items" >
     <div class="item"  *ngFor = "let list of people.results">
-        <a (click)="display()">{{list.name}}</a>
+        <a (click) = "storename(list)"routerLink="/yoda">{{list.name}}</a>
     </div>
    
     </div>
@@ -18,7 +18,7 @@
 </div>
 
 
-<div class="cont" *ngIf = "details" (click)="displist()">
+<!-- <div class="cont" *ngIf = "details" (click)="displist()">
     <div class="img-detail">
      <div class="img">
          <img src="assets/yoda.jpg" alt="yoda pic" >
@@ -71,4 +71,4 @@
          </section>
      </div>
     </div> 
- </div>
+ </div> -->
