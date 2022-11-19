@@ -9,8 +9,8 @@
 }
 .info{
     display: flex;
-    height: 10vh;
-    
+    height: 9vh;
+    /* border: 1px solid red; */
     margin-top: -1rem;
 }
 .key{
@@ -21,7 +21,8 @@
 .value{
     /* margin-bottom: 5%; */
     /* border: 1px solid red; */
-    margin-left: 0.3rem;
+    /* margin-left: 0.3rem; */
+    /* border:1px solid white; */
 }
 
 h1{

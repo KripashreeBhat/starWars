@@ -1,0 +1,19 @@
+<app-nav-bar></app-nav-bar>
+<div class="full" >
+<div class="container" *ngIf="list">
+    <div class="list-items" >
+    <div class="item"  *ngFor = "let list of people.results">
+        <a (click) = "storename(list)"routerLink="/yoda">{{list.name}}</a>
+    </div>
+   
+    </div>
+    <div class="btn">
+        <div class="fn-btn">
+        <button (click)="previous()">PREVIOUS</button>
+    </div>
+   <div class="fn-btn" (click)="next()">
+        <button >NEXT</button>
+    </div> 
+    </div>
+</div>
+

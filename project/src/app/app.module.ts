@@ -15,6 +15,7 @@ import { CacheApiService } from './cache-api.service';
 import { CacheInterceptor } from './cache.interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { DataserviceService } from './dataservice.service';
+import { PlanetComponent } from './planet/planet.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,8 @@ import { DataserviceService } from './dataservice.service';
     CharactersComponent,
     YodaDetailComponent,
     NavBarComponent,
-    CachepipePipe
+    CachepipePipe,
+    PlanetComponent
   ],
   imports: [
     BrowserModule,

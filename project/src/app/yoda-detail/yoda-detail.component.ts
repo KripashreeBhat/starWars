@@ -28,10 +28,7 @@ export class YodaDetailComponent implements OnInit {
 }
 getdetails(){
   this.details = JSON.parse(localStorage.getItem('details')as any);
-
   // console.log(this.details);
   // console.log(this.details['name']);
-  
-  
 }
 }
