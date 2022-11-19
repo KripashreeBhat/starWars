@@ -16,14 +16,17 @@ export class FilmsComponent implements OnInit {
   people :any;
   nextdata:any;
   name:any;
+  disableprevious = true;
+  disablenext = true;
   constructor(private data: DataserviceService) { }
-
+   
   ngOnInit(): void {
     sessionStorage.removeItem('character');
     sessionStorage.removeItem('species');
     sessionStorage.removeItem('starship');
     sessionStorage.removeItem('vehicles');
     sessionStorage.removeItem('planet');
+    // this.disableprevious = true;
     if( sessionStorage.getItem('films')){
       this.people = JSON.parse((sessionStorage.getItem('films')) as any)
     }
@@ -67,15 +70,31 @@ displist(){
 }
 previous(){
   this.data.getPeople(this.people?.previous).subscribe(data=>{
-    this.people = data;  
-    sessionStorage.setItem('films',JSON.stringify(this.people)) 
+    this.people = data; 
+    if(this.people?.previous){ 
+    sessionStorage.setItem('films',JSON.stringify(this.people))
+    this.disableprevious = false;
+    this.disablenext = false;
+    }
+    else{
+      this.disableprevious = true;
+      this.disablenext = false;
+    }
   })
 }
 next(){
   
   this.data.getPeople(this.people?.next).subscribe(data=>{
-    this.people = data;  
-    sessionStorage.setItem('films',JSON.stringify(this.people)) 
+    this.people = data; 
+    if(this.people?.next){ 
+      this.disableprevious = false;
+      this.disablenext = false;
+    sessionStorage.setItem('films',JSON.stringify(this.people))
+    }
+    else{
+      this.disableprevious = false;
+      this.disablenext = true;
+    } 
   })
 }
  storename(name:any){

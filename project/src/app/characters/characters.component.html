@@ -1,22 +1,31 @@
-<app-nav-bar></app-nav-bar>
-<div class="full" >
-<div class="container" *ngIf="list">
-    <div class="list-items" >
-    <div class="item"  *ngFor = "let list of people.results">
-        <a (click) = "storename(list)"routerLink="/yoda">{{list.name}}</a>
+<div class="full-content">
+    <!-- <app-nav-bar></app-nav-bar> -->
+    <div class="details" *ngIf ='details' (click)="displaychild()" >
+        <router-outlet></router-outlet>
+        
     </div>
-   
+    <div class="nav" *ngIf="list">
+    <app-nav-bar></app-nav-bar>
+    <div class="container" >
+        <div class="list-items"  (click)="displayparent()">
+            <div class="item"  *ngFor = "let list of people.results"  > 
+                
+                <a (click) = "storename(list)" >{{list.name}}</a>
+    </div>
+    
     </div>
     <div class="btn">
         <div class="fn-btn">
-        <button (click)="previous()">PREVIOUS</button>
+        <button (click)="previous()" [class.displayprev]="disableprevious">PREVIOUS</button>
     </div>
-   <div class="fn-btn" (click)="next()">
-        <button >NEXT</button>
+    <div class="fn-btn" (click)="next()">
+        <button [class.displaynext] = 'disablenext'>NEXT</button>
     </div> 
-    </div>
 </div>
-
+</div>
+</div>
+</div>
+<!-- <router-outlet></router-outlet> -->
 
 <!-- <div class="cont" *ngIf = "details" (click)="displist()">
     <div class="img-detail">

@@ -37,6 +37,13 @@ img:hover{
 }
 img:hover{
 }
+.active{
+ 
+        background-color: rgba(0,171,255,0.4);
+        color : #fff;
+    
+    } 
+
 @media(max-width:500px){
     .container{
         /* border:1px solid #fff; */

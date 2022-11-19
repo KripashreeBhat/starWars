@@ -7,13 +7,13 @@
     </div>
    
     </div>
-    <!-- <div class="btn">
+    <div class="btn">
         <div class="fn-btn">
-        <button (click)="previous()">PREVIOUS</button>
+        <button (click)="previous()" [class.displayprev]="disableprevious">PREVIOUS</button>
     </div>
    <div class="fn-btn" (click)="next()">
-        <button >NEXT</button>
+        <button [class.displaynext] = 'disablenext'>NEXT</button>
     </div> 
-    </div> -->
+    </div>
 </div>
 

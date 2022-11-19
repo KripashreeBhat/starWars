@@ -23,7 +23,13 @@
 }
 .menu:hover{
     background-color: rgba(0,171,255,0.4);
+    /* background-color: black; */
 }
+/* .active {
+    background-color: rgba(0,171,255,0.4);
+    color : #fff;
+
+} */
  a{
     /* margin-left:5%; */
     /* display: flex; */
@@ -32,6 +38,10 @@
     text-decoration:none;
     color:#fff;
     
+}
+.activestate{
+    background-color: rgba(0,171,255,0.4);
+    color : #fff;
 }
 @media(max-width:1068px){
     .menu{

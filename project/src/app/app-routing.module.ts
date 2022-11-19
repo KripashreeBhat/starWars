@@ -16,19 +16,28 @@ import { VehicledetailComponent } from './vehicledetail/vehicledetail.component'
 const routes: Routes = [
   { path : '', component: HomeComponent},
 
-  { path: 'yoda' , component:YodaDetailComponent},
+  // { path: 'yoda' , component:YodaDetailComponent},
   { path : 'planetdetail' , component:PlanetDetailComponent},
   { path : 'speciesdetail', component: SpeciesDetailComponent},
   { path : 'filmdetail', component: FilmsDetailComponent},
   { path : 'starshipdetail' , component : StarshipDetailComponent},
   { path : 'vehicledetail' , component: VehicledetailComponent},
 
-  { path: 'characters' ,component:CharactersComponent},
   { path: 'planet' ,component:PlanetComponent},
   { path: 'species', component:SpeciesComponent},
   { path: 'films', component:FilmsComponent},
   { path: 'starship', component:StarshipComponent},
   { path: 'vehicle', component:VehicleComponent},
+
+  { path: 'characters' ,
+   component:CharactersComponent,
+   children:[
+      { path : 'characters' , component : CharactersComponent},
+    
+      { path: 'yoda' , component:YodaDetailComponent},
+    
+   ]
+  },
 ];
 
 @NgModule({

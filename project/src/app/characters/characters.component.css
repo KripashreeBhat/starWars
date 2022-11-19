@@ -73,7 +73,11 @@ button{
   height:2.2rem;
   /* border:1px solid white;  */
   /* background-color: #7692A72f ; */
-  background-color: rgba(0,171,255,0.4); 
+  background-color: rgba(0,168,255,0.4);
+}
+.displayprev , .displaynext{
+    /* background-color: blue; */
+    color:#7692A7;
 }
 @media(max-width:900px){
     .container{

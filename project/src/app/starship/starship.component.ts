@@ -16,6 +16,8 @@ export class StarshipComponent implements OnInit {
   people :any;
   nextdata:any;
   name:any;
+  disableprevious = true;
+  disablenext = false;
   constructor(private data: DataserviceService) { }
 
   ngOnInit(): void {
@@ -68,15 +70,32 @@ displist(){
 }
 previous(){
   this.data.getPeople(this.people?.previous).subscribe(data=>{
-    this.people = data;  
-    sessionStorage.setItem('starship',JSON.stringify(this.people)) 
+    this.people = data;
+    if(this.people?.previous){
+      this.disableprevious = false;
+      this.disablenext = false;
+    sessionStorage.setItem('starship',JSON.stringify(this.people))
+    }
+    else{
+      this.disableprevious = true;
+      this.disablenext = false;
+    } 
   })
 }
 next(){
   
   this.data.getPeople(this.people?.next).subscribe(data=>{
     this.people = data; 
-    sessionStorage.setItem('starship',JSON.stringify(this.people)) 
+
+    if(this.people?.next){
+      this.disableprevious = false;
+      this.disablenext = false;
+    sessionStorage.setItem('starship',JSON.stringify(this.people))
+    }
+    else{
+      this.disableprevious = false;
+      this.disablenext = true;
+    } 
   })
 }
  storename(name:any){

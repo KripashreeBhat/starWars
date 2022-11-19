@@ -15,6 +15,8 @@ export class PlanetComponent implements OnInit {
   people :any;
   nextdata:any;
   name:any;
+  disableprevious = true;
+  disablenext = false;
   constructor(private data: DataserviceService) { }
 
   ngOnInit(): void {
@@ -23,7 +25,7 @@ export class PlanetComponent implements OnInit {
     sessionStorage.removeItem('starship');
     sessionStorage.removeItem('vehicles');
     sessionStorage.removeItem('films');
-    
+    // this.disableprevious = true;
     if( sessionStorage.getItem('planet')){
       this.people = JSON.parse((sessionStorage.getItem('planet')) as any)
     }
@@ -44,17 +46,7 @@ export class PlanetComponent implements OnInit {
     // console.log(this.users);
     
   }
-// getdetail(){
-//   let url = 'https://swapi.dev/api/people/'
-//     this.userSubs = this.data.getPeople(url).subscribe({
-//       next:(users)=> console.log('data reciceved',users),
-//       complete:()=> console.log('request fetched'),
-//       error:(err)=> console.log(err),
-//       });
-      
-      
-// }
-  
+
 display(){
   this.details = true;
   this.list = false;
@@ -66,14 +58,36 @@ displist(){
 previous(){
   this.data.getPeople(this.people?.previous).subscribe(data=>{
     this.people = data;  
-    sessionStorage.setItem('planet',JSON.stringify(this.people)) 
+    if(this.people?.previous){
+      this.disableprevious = false;
+      this.disablenext = false;
+      sessionStorage.setItem('planet',JSON.stringify(this.people)) ;
+      console.log(this.people?.previous);
+      
+    }
+    else{
+      this.disableprevious = true;
+      this.disablenext = false;
+      console.log(this.people?.previous);
+    }
   })
 }
 next(){
   
   this.data.getPeople(this.people?.next).subscribe(data=>{
     this.people = data; 
-    sessionStorage.setItem('planet',JSON.stringify(this.people)) 
+    if(this.people?.next){
+      this.disableprevious = false;
+      this.disablenext = false;
+      sessionStorage.setItem('planet',JSON.stringify(this.people)) 
+    }
+    else{
+      this.disableprevious = false;
+      this.disablenext = true;
+      console.log(this.people?.next);
+      
+    }
+   
   })
 }
  storename(name:any){

@@ -1,29 +1,31 @@
 
 <!-- <p>home works!</p> -->
 <div class="container">
-    <div class="menu" *ngIf = "display">
-    <div class="image" routerLink="/films">
-        <img src="assets/films_normal.png"  alt="films">
+    <div class="menu" >
+    <!-- <div class="image" routerLink="/films"> -->
+    <div class="image">
+        <img src="assets/films_normal.png"  alt="films"  (click)="displayfilms()" >
         <p>FILMS</p>
     </div>
-    <div class="image" routerLink="/species">
+    <div class="image" (click)="displayspecies()" >
         <img src="assets/species_normal.png" alt="films">
         <p>SPECIES</p>
     </div>
-    <div class="image" routerLink="/planet">
+    <div class="image" (click)="displayplanet()">
         <img src="assets/planets_normal.png" alt="films">
         <p>PLANETS</p>
     </div>
-    <div class="image" (click)="displaymenu()">
+    <!-- <div class="image" (click)="displaychar()"> -->
+    <div class="image" routerLink="/characters">
         <img src="assets/characters_normal.png" alt="films">
         <p>PEOPLE</p>
     </div>
-    <div class="image" routerLink="/starship">
+    <div class="image" (click)="displayvehicle()" >
         <img src="assets/vehicles_normal.png" alt="films">
         <p>STARSHIP</p>
     </div>
 
-    <div class="image" routerLink = '/vehicle'>
+    <div class="image" (click)="displayvehicle()" >
         <img src="assets/droids_normal.png" alt="films">
         <p>VEHICLES</p>
     </div>
