@@ -18,6 +18,18 @@ export class CharactersComponent implements OnInit {
   constructor(private data: DataserviceService) { }
 
   ngOnInit(): void {
+    sessionStorage.removeItem('films');
+    sessionStorage.removeItem('species');
+    sessionStorage.removeItem('starship');
+    sessionStorage.removeItem('vehicles');
+    sessionStorage.removeItem('planet');
+
+    if( sessionStorage.getItem('character')){
+      this.people = JSON.parse((sessionStorage.getItem('character')) as any)
+    }
+    else {
+
+    
     let url = 'https://swapi.dev/api/people/'
     this.userSubs = this.data.getPeople(url).subscribe({
       next:(users)=> {
@@ -30,7 +42,7 @@ export class CharactersComponent implements OnInit {
       complete:()=> console.log('request fetched'),
       error:(err)=> console.log(err),
     });
-    
+  }
     // console.log(this.users);
     
   }
@@ -55,18 +67,21 @@ displist(){
 }
 previous(){
   this.data.getPeople(this.people?.previous).subscribe(data=>{
-    this.people = data;  
+    this.people = data; 
+    sessionStorage.setItem('character',JSON.stringify(this.people)) 
   })
 }
 next(){
   
   this.data.getPeople(this.people?.next).subscribe(data=>{
     this.people = data;  
+    sessionStorage.setItem('character',JSON.stringify(this.people))
   })
 }
  storename(name:any){
  console.log(name);
  localStorage.setItem('details',JSON.stringify(name))
+
  
  } 
   

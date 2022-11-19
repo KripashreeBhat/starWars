@@ -4,43 +4,46 @@
     <div class="img">
         <img src="assets/yoda.jpg" alt="yoda pic" >
     </div>
+
     <div class="detail">
-        <h1>{{details.name}}</h1>
-        <section class="scroll">
-            <div class="info">
-                <p class="key">Birth Year : </p>
-                <p class="value">&nbsp;{{details.birth_year}}</p>
-            </div>
-            <div class="info">
-                <p class="key">Gender :</p>
-                <p class="value">&nbsp;{{details.gender | titlecase : false}}</p>
-            </div>
-            <div class="info">
-                <p class="key">Height :</p>
-                <p class="value">&nbsp;{{details.height}}</p>
-            </div>
-            <div class="info">
-                <p class="key">Mass :</p>
-                <p class="value">&nbsp;{{details.mass}}</p>
-            </div>
-            <div class="info">
-                <p class="key">Skin Color :</p>
-                <p class="value">&nbsp;{{details.skin_color | titlecase : false}}</p>
-            </div>
-            <div class="info">
-                <p class="key">Eye Color :</p>
-                <p class="value">&nbsp;{{details.eye_color | titlecase : false}}</p>
-            </div>
-            <div class="info">
-                <p class="key">Hair Color :</p>
-                <p class="value">&nbsp;{{details.hair_color | titlecase : false}}</p>
-            </div>
-            <!-- <div class="info">
-                <p class="key">Designation :</p>
-                <p class="value">Sentiment</p>
-            </div> -->
+        <h1>{{details.name | titlecase : true}}</h1>
+    <section class="scroll">
+        <div class="info">
+            <p class="key">Birth Year : </p>
+            <p class="value">&nbsp;{{details.birth_year}}</p>
+        </div>
+        <div class="info">
+            <p class="key">Gender :</p>
+            <p class="value">&nbsp;{{details.gender | titlecase : false}}</p>
+        </div>
+        <div class="info">
+            <p class="key">Height :</p>
+            <p class="value">&nbsp;{{details.height}}</p>
+        </div>
+        <div class="info">
+            <p class="key">Mass :</p>
+            <p class="value">&nbsp;{{details.mass}}</p>
+        </div>
+        <div class="info">
+            <p class="key">Skin Color :</p>
+            <p class="value">&nbsp;{{details.skin_color | titlecase : false}}</p>
+        </div>
+        <div class="info">
+            <p class="key">Eye Color :</p>
+            <p class="value">&nbsp;{{details.eye_color | titlecase : false}}</p>
+        </div>
+        <div class="info">
+            <p class="key">Hair Color :</p>
+            <p class="value">&nbsp;{{details.hair_color | titlecase : false}}</p>
+        </div>
+        <!-- <div class="info">
+            <p class="key">Designation :</p>
+            <p class="value">Sentiment</p>
+        </div> -->
 
         </section>
     </div>
+
+
    </div> 
 </div>

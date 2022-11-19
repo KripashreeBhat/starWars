@@ -1,0 +1,51 @@
+<app-nav-bar></app-nav-bar>
+<div class="container">
+   <div class="img-detail">
+    <div class="img">
+        <img src="assets/yoda.jpg" alt="yoda pic" >
+    </div>
+
+    <div class="detail">
+        <h1>{{details.title | titlecase : true}}</h1>
+        <section class="scroll">
+            <div class="info">
+                <p class="key">Director : </p>
+                <p class="value">&nbsp;{{details.director | titlecase :false}}</p>
+            </div>
+            <div class="info">
+                <p class="key">Episode Id :</p>
+                <p class="value">&nbsp;{{details.episode_id}}</p>
+            </div>
+            <div class="info">
+                <p class="key">Opening&nbsp;crawl&nbsp;:&nbsp;</p>
+                <p class="value">{{details.opening_crawl | titlecase : false}}</p>
+            </div>
+            <!-- <div class="info">
+                <p class="key">Orbital Period :</p>
+                <p class="value">&nbsp;{{details.orbital_period}}</p>
+            </div>
+            <div class="info">
+                <p class="key">Surface Water :</p>
+                <p class="value">&nbsp;{{details.surface_water}}</p>
+            </div>
+            <div class="info">
+                <p class="key">Terrain :</p>
+                <p class="value">&nbsp;{{details.terrain | titlecase : false}}</p>
+            </div>
+            <div class="info">
+                <p class="key">Rotation Period :</p>
+                <p class="value">&nbsp;{{details.rotation_period}}</p>
+            </div> -->
+            <!-- <div class="info">
+                <p class="key">Designation :</p>
+                <p class="value">Sentiment</p>
+            </div> -->
+
+        </section>
+    </div>
+
+  
+   </div> 
+</div>
+
+

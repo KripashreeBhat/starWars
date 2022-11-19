@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { DataserviceService } from '../dataservice.service';
 @Component({
-  selector: 'app-planet',
-  templateUrl: './planet.component.html',
-  styleUrls: ['./planet.component.css']
+  selector: 'app-films',
+  templateUrl: './films.component.html',
+  styleUrls: ['./films.component.css']
 })
-export class PlanetComponent implements OnInit {
+export class FilmsComponent implements OnInit {
+
   list = true;
   details = false;
   // array =['DARTH VADER','LUKE SKYWALKER','OBI-WAN KENOBI','YODA']
@@ -22,13 +23,14 @@ export class PlanetComponent implements OnInit {
     sessionStorage.removeItem('species');
     sessionStorage.removeItem('starship');
     sessionStorage.removeItem('vehicles');
-    sessionStorage.removeItem('films');
-    
-    if( sessionStorage.getItem('planet')){
-      this.people = JSON.parse((sessionStorage.getItem('planet')) as any)
+    sessionStorage.removeItem('planet');
+    if( sessionStorage.getItem('films')){
+      this.people = JSON.parse((sessionStorage.getItem('films')) as any)
     }
-    else {
-    let url = 'https://swapi.dev/api/planets/'
+    else{
+
+   
+    let url = 'https://swapi.dev/api/films/'
     this.userSubs = this.data.getPeople(url).subscribe({
       next:(users)=> {
         console.log(users);
@@ -40,9 +42,9 @@ export class PlanetComponent implements OnInit {
       complete:()=> console.log('request fetched'),
       error:(err)=> console.log(err),
     });
-  }
-    // console.log(this.users);
     
+    // console.log(this.users);
+  }
   }
 // getdetail(){
 //   let url = 'https://swapi.dev/api/people/'
@@ -66,14 +68,14 @@ displist(){
 previous(){
   this.data.getPeople(this.people?.previous).subscribe(data=>{
     this.people = data;  
-    sessionStorage.setItem('planet',JSON.stringify(this.people)) 
+    sessionStorage.setItem('films',JSON.stringify(this.people)) 
   })
 }
 next(){
   
   this.data.getPeople(this.people?.next).subscribe(data=>{
-    this.people = data; 
-    sessionStorage.setItem('planet',JSON.stringify(this.people)) 
+    this.people = data;  
+    sessionStorage.setItem('films',JSON.stringify(this.people)) 
   })
 }
  storename(name:any){
@@ -81,7 +83,4 @@ next(){
  localStorage.setItem('details',JSON.stringify(name))
  
  } 
-  
- 
-
 }

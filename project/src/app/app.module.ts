@@ -16,6 +16,15 @@ import { CacheInterceptor } from './cache.interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { DataserviceService } from './dataservice.service';
 import { PlanetComponent } from './planet/planet.component';
+import { SpeciesComponent } from './species/species.component';
+import { FilmsComponent } from './films/films.component';
+import { StarshipComponent } from './starship/starship.component';
+import { VehicleComponent } from './vehicle/vehicle.component';
+import { PlanetDetailComponent } from './planet-detail/planet-detail.component';
+import { SpeciesDetailComponent } from './species-detail/species-detail.component';
+import { FilmsDetailComponent } from './films-detail/films-detail.component';
+import { StarshipDetailComponent } from './starship-detail/starship-detail.component';
+import { VehicledetailComponent } from './vehicledetail/vehicledetail.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +35,16 @@ import { PlanetComponent } from './planet/planet.component';
     YodaDetailComponent,
     NavBarComponent,
     CachepipePipe,
-    PlanetComponent
+    PlanetComponent,
+    SpeciesComponent,
+    FilmsComponent,
+    StarshipComponent,
+    VehicleComponent,
+    PlanetDetailComponent,
+    SpeciesDetailComponent,
+    FilmsDetailComponent,
+    StarshipDetailComponent,
+    VehicledetailComponent
   ],
   imports: [
     BrowserModule,

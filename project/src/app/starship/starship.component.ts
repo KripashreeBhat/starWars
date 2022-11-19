@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { DataserviceService } from '../dataservice.service';
 @Component({
-  selector: 'app-planet',
-  templateUrl: './planet.component.html',
-  styleUrls: ['./planet.component.css']
+  selector: 'app-starship',
+  templateUrl: './starship.component.html',
+  styleUrls: ['./starship.component.css']
 })
-export class PlanetComponent implements OnInit {
+export class StarshipComponent implements OnInit {
+
   list = true;
   details = false;
   // array =['DARTH VADER','LUKE SKYWALKER','OBI-WAN KENOBI','YODA']
@@ -19,16 +20,18 @@ export class PlanetComponent implements OnInit {
 
   ngOnInit(): void {
     sessionStorage.removeItem('character');
-    sessionStorage.removeItem('species');
-    sessionStorage.removeItem('starship');
+    sessionStorage.removeItem('planet');
     sessionStorage.removeItem('vehicles');
+    sessionStorage.removeItem('species');
     sessionStorage.removeItem('films');
-    
-    if( sessionStorage.getItem('planet')){
-      this.people = JSON.parse((sessionStorage.getItem('planet')) as any)
+     
+    if( sessionStorage.getItem('starship')){
+      this.people = JSON.parse((sessionStorage.getItem('starship')) as any)
     }
-    else {
-    let url = 'https://swapi.dev/api/planets/'
+    else{
+
+    
+    let url = ' https://swapi.dev/api/starships/'
     this.userSubs = this.data.getPeople(url).subscribe({
       next:(users)=> {
         console.log(users);
@@ -66,22 +69,22 @@ displist(){
 previous(){
   this.data.getPeople(this.people?.previous).subscribe(data=>{
     this.people = data;  
-    sessionStorage.setItem('planet',JSON.stringify(this.people)) 
+    sessionStorage.setItem('starship',JSON.stringify(this.people)) 
   })
 }
 next(){
   
   this.data.getPeople(this.people?.next).subscribe(data=>{
     this.people = data; 
-    sessionStorage.setItem('planet',JSON.stringify(this.people)) 
+    sessionStorage.setItem('starship',JSON.stringify(this.people)) 
   })
 }
  storename(name:any){
  console.log(name);
  localStorage.setItem('details',JSON.stringify(name))
  
+ 
  } 
   
  
-
 }
