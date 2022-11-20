@@ -1,33 +1,51 @@
+<div class="menu">
+  <div class="image" routerLink="/films">
+    <div class="img">
+      <img src="assets/films_normal.png" alt="films" />
+    </div>
+    <div class="p">
+      <p>FILMS</p>
+    </div>
+  </div>
+  <div class="image" routerLink="/species">
+    <div class="img">
+      <img src="assets/species_normal.png" alt="films" />
+    </div>
+    <div class="p">
+      <p>SPECIES</p>
+    </div>
+  </div>
+  <div class="image" routerLink="/planet">
+    <div class="img">
+      <img src="assets/planets_normal.png" alt="films" />
+    </div>
+    <div class="p">
+      <p>PLANETS</p>
+    </div>
+  </div>
+  <div class="image" routerLink="/characters">
+    <div class="img">
+      <img src="assets/characters_normal.png" alt="films" />
+    </div>
+    <div class="p">
+      <p>PEOPLE</p>
+    </div>
+  </div>
+  <div class="image" (click)="displayvehicle()">
+    <div class="img">
+      <img src="assets/vehicles_normal.png" alt="films" />
+    </div>
+    <div class="p">
+      <p>STARSHIP</p>
+    </div>
+  </div>
 
-<!-- <p>home works!</p> -->
-<div class="container">
-    <div class="menu" >
-    <!-- <div class="image" routerLink="/films"> -->
-    <div class="image">
-        <img src="assets/films_normal.png"  alt="films"  (click)="displayfilms()" >
-        <p>FILMS</p>
+  <div class="image" (click)="displayvehicle()">
+    <div class="img">
+      <img src="assets/droids_normal.png" alt="films" />
     </div>
-    <div class="image" (click)="displayspecies()" >
-        <img src="assets/species_normal.png" alt="films">
-        <p>SPECIES</p>
+    <div class="p">
+      <p>VEHICLES</p>
     </div>
-    <div class="image" (click)="displayplanet()">
-        <img src="assets/planets_normal.png" alt="films">
-        <p>PLANETS</p>
-    </div>
-    <!-- <div class="image" (click)="displaychar()"> -->
-    <div class="image" routerLink="/characters">
-        <img src="assets/characters_normal.png" alt="films">
-        <p>PEOPLE</p>
-    </div>
-    <div class="image" (click)="displayvehicle()" >
-        <img src="assets/vehicles_normal.png" alt="films">
-        <p>STARSHIP</p>
-    </div>
-
-    <div class="image" (click)="displayvehicle()" >
-        <img src="assets/droids_normal.png" alt="films">
-        <p>VEHICLES</p>
-    </div>
-</div>
+  </div>
 </div>

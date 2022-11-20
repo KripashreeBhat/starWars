@@ -26,17 +26,17 @@ export class HomeComponent implements OnInit {
 displayfilms(){
   // this.isValue = 1;
   // this.remem = localStorage.setItem('nav-value',JSON.stringify(this.isValue))
-  this.route.navigate(['/films']);
+  // this.route.navigate(['/films']);
 }
 displayspecies(){
   // this.isValue = 2;
   // this.remem = localStorage.setItem('nav-value',JSON.stringify(this.isValue))
-  this.route.navigate(['/species']);
+  // this.route.navigate(['/species']);
 }
 displayplanet(){
   // this.isValue = 3;
   // this.remem = localStorage.setItem('nav-value',JSON.stringify(this.isValue))
-  this.route.navigate(['/planet']);
+  // this.route.navigate(['/planet']);
   
 }
 

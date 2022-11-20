@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DataserviceService } from '../dataservice.service';
 @Component({
   selector: 'app-vehicle',
@@ -18,7 +19,7 @@ export class VehicleComponent implements OnInit {
   name:any;
   disableprevious = true;
   disablenext = false;
-  constructor(private data: DataserviceService) { }
+  constructor(private data: DataserviceService,  private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     sessionStorage.removeItem('character');
@@ -100,8 +101,14 @@ next(){
  storename(name:any){
  console.log(name);
  localStorage.setItem('details',JSON.stringify(name))
- 
+ this.router.navigate(['vehicledetail'], {relativeTo:this.route});
+ this.list = false;
+ this.details = true;
  
  } 
+ displaychild(){
+  this.list = true;
+  this.details = false;
   
+}
 }

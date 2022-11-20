@@ -2,10 +2,16 @@
 <app-nav-bar></app-nav-bar>
 <div class="container">
    <div class="img-detail">
-    <div class="img">
+    <!-- <div class="img">
         <img src="assets/yoda.jpg" alt="yoda pic" >
     </div>
-
+  -->
+   <!-- <div class="img" *ngFor="let list of product">
+        <img [src]='list.url' />
+   </div> -->
+   <div class="img" *ngFor="let arr of array">
+    <img src="{{arr}}" alt="">
+   </div>
     <div class="detail">
         <h1>{{details.name | titlecase : true}}</h1>
     <section class="scroll">
@@ -38,9 +44,12 @@
             <p class="value">&nbsp;{{details.hair_color | titlecase : false}}</p>
         </div>
         <!-- <div class="info">
-            <p class="key">Designation :</p>
-            <p class="value">Sentiment</p>
+            <p class="key">Starships : </p>
+            <p class="value" *ngFor="let ship of person.starships">{{ ship.name }}</p>
         </div> -->
+        <!-- <div class="info">
+            <p class="key"></p> -->
+        <!-- </div> -->
 
         </section>
     </div>

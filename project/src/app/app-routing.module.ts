@@ -14,34 +14,88 @@ import { FilmsDetailComponent } from './films-detail/films-detail.component';
 import { StarshipDetailComponent } from './starship-detail/starship-detail.component';
 import { VehicledetailComponent } from './vehicledetail/vehicledetail.component';
 const routes: Routes = [
-  { path : '', component: HomeComponent},
+  { path: '', component: HomeComponent },
 
   // { path: 'yoda' , component:YodaDetailComponent},
-  { path : 'planetdetail' , component:PlanetDetailComponent},
-  { path : 'speciesdetail', component: SpeciesDetailComponent},
-  { path : 'filmdetail', component: FilmsDetailComponent},
-  { path : 'starshipdetail' , component : StarshipDetailComponent},
-  { path : 'vehicledetail' , component: VehicledetailComponent},
+  // { path: 'planetdetail', component: PlanetDetailComponent },
+  // { path: 'speciesdetail', component: SpeciesDetailComponent },
+  // { path: 'filmdetail', component: FilmsDetailComponent },
+  // { path: 'starshipdetail', component: StarshipDetailComponent },
+  // { path: 'vehicledetail', component: VehicledetailComponent },
 
-  { path: 'planet' ,component:PlanetComponent},
-  { path: 'species', component:SpeciesComponent},
-  { path: 'films', component:FilmsComponent},
-  { path: 'starship', component:StarshipComponent},
-  { path: 'vehicle', component:VehicleComponent},
+  {
+    path: 'planet',
+    component: PlanetComponent,
+    children: [
+      { path: 'planet', component: PlanetComponent },
+      { path: 'planetdetail', component: PlanetDetailComponent },
+    ],
+  },
 
-  { path: 'characters' ,
-   component:CharactersComponent,
-   children:[
-      { path : 'characters' , component : CharactersComponent},
-    
-      { path: 'yoda' , component:YodaDetailComponent},
-    
-   ]
+  {
+    path: 'species',
+    component: SpeciesComponent,
+    children: [
+      { path: 'species', component: SpeciesComponent },
+      { path: 'speciesdetail', component: SpeciesDetailComponent },
+    ],
+  },
+  {
+    path: 'films',
+    component: FilmsComponent,
+    children: [
+      {
+        path: 'films',
+        component: FilmsComponent,
+      },
+      {
+        path: 'filmdetail',
+        component: FilmsDetailComponent,
+      },
+    ],
+  },
+  {
+    path: 'starship',
+    component: StarshipComponent,
+    children: [
+      {
+        path: 'starship',
+        component: StarshipComponent,
+      },
+      {
+        path: 'starshipdetail',
+        component: StarshipDetailComponent,
+      },
+    ],
+  },
+  {
+    path: 'vehicle',
+    component: VehicleComponent,
+    children: [
+      {
+        path: 'vehicle',
+        component: VehicleComponent,
+      },
+      {
+        path: 'vehicledetail',
+        component: VehicledetailComponent,
+      },
+    ],
+  },
+
+  {
+    path: 'characters',
+    component: CharactersComponent,
+    children: [
+      { path: 'characters', component: CharactersComponent },
+
+      { path: 'yoda', component: YodaDetailComponent },
+    ],
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

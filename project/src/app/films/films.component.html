@@ -1,9 +1,15 @@
-<app-nav-bar></app-nav-bar>
-<div class="full" >
+<!-- <app-nav-bar></app-nav-bar> -->
+
+    <div class="details" *ngIf ='details' (click)="displaychild()" >
+        <router-outlet></router-outlet>
+        
+    </div>
+    <div class="nav" *ngIf="list">
+        <app-nav-bar></app-nav-bar>   
 <div class="container" *ngIf="list">
     <div class="list-items" >
     <div class="item"  *ngFor = "let list of people.results">
-        <a (click) = "storename(list)"routerLink="/filmdetail">{{list.title}}</a>
+        <a (click) = "storename(list)">{{list.title}}</a>
     </div>
    
     </div>
@@ -16,4 +22,4 @@
     </div> 
     </div>
 </div>
-
+</div>

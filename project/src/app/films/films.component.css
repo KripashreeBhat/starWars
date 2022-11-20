@@ -26,6 +26,7 @@
 
 .list-items{
     display: flex;
+    cursor:pointer;
     flex-direction: column;
     /* justify-content: center;
     align-items:center; */
@@ -41,7 +42,7 @@ a{
     text-decoration: none;
     color:white;
   
-    padding-top:0.7rem;
+    padding-top:0.4rem;
     /* margin-bottom: 8%; */
     text-align: center;
     

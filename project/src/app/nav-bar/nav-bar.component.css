@@ -21,6 +21,10 @@
     /* position: absolute; */
     /* border: 1px solid white; */
 }
+.small{
+    /* border:1px solid green; */
+    width:100%
+}
 .menu:hover{
     background-color: rgba(0,171,255,0.4);
     /* background-color: black; */

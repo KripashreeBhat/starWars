@@ -1,10 +1,14 @@
 <app-nav-bar></app-nav-bar>
 <div class="container">
    <div class="img-detail">
-    <div class="img">
+    <div class="img" >
         <img src="assets/yoda.jpg" alt="yoda pic" >
     </div>
-
+    <!-- <div class="img"  *ngFor='let item of list;'>
+        <div class="img">
+         <img src={{item.download_url}} alt="">
+    </div> -->
+     
     <div class="detail">
         <h1>{{details.title | titlecase : true}}</h1>
         <section class="scroll">

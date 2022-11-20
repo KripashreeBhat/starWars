@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { DataserviceService } from '../dataservice.service';
 @Component({
   selector: 'app-films-detail',
@@ -10,19 +10,21 @@ export class FilmsDetailComponent implements OnInit {
   details :any;
   info:any;
   userSubs :any;
-  constructor(private service: DataserviceService) { 
-   
+  list:any;
+  subscriptions: any = {};
+  constructor(public service: DataserviceService) { 
+    this.subscriptions.data = this.service.getImg().subscribe(list => {
+      console.log(list);
+      this.list = list;
+    });
   }
-
+ 
+  ngOnDestroy(){
+    Object.keys(this.subscriptions).forEach(key => this.subscriptions[key].unsubscribe());
+  }
   ngOnInit(): void {
-    // console.log('jiehyhi');
-    // let url = 'https://swapi.dev/api/people/'
-    // this.userSubs = this.service.getPeople(url).subscribe((data )=>{
-    //   console.log(data);
-      
-    // })
     this.getdetails();
-  
+    // Object.keys(this.subscriptions).forEach(key => this.subscriptions[key].unsubscribe());
    
   
 }

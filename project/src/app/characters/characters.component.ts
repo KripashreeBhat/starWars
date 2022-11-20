@@ -56,8 +56,8 @@ export class CharactersComponent implements OnInit {
   
 display(){
   // this.details = true;
-  this.list = false;
-  this.router.navigate(['yoda'], {relativeTo:this.route});
+  // this.list = false;
+  // this.router.navigate(['yoda'], {relativeTo:this.route});
 }
 displist(){
   this.details = false;
@@ -97,6 +97,8 @@ next(){
  console.log(name);
  localStorage.setItem('details',JSON.stringify(name))
  this.router.navigate(['yoda'], {relativeTo:this.route});
+ this.list = false;
+ this.details = true;
  } 
 
  displaychild(){
@@ -104,9 +106,5 @@ next(){
   this.details = false;
   
 }
-displayparent(){
-   this.router.navigateByUrl('/characters')
-  this.list = false;
-  this.details = true;
- }
+
 }
