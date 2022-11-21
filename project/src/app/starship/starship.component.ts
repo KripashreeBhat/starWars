@@ -19,6 +19,9 @@ export class StarshipComponent implements OnInit {
   name:any;
   disableprevious = true;
   disablenext = false;
+  indexno=0;
+  loading=true;
+  notloading=false;
   constructor(private data: DataserviceService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
@@ -29,10 +32,13 @@ export class StarshipComponent implements OnInit {
     sessionStorage.removeItem('films');
      
     if( sessionStorage.getItem('starship')){
+      this.loading = false;
+      this.notloading = true;
       this.people = JSON.parse((sessionStorage.getItem('starship')) as any)
     }
     else{
-
+      this.loading = false;
+      this.notloading = true;
     
     let url = ' https://swapi.dev/api/starships/'
     this.userSubs = this.data.getPeople(url).subscribe({
@@ -70,8 +76,12 @@ displist(){
   this.list = true;
 }
 previous(){
+  this.loading = true;
+  this.notloading = false;
   this.data.getPeople(this.people?.previous).subscribe(data=>{
     this.people = data;
+    this.loading = false;
+    this.notloading = true;
     if(this.people?.previous){
       this.disableprevious = false;
       this.disablenext = false;
@@ -84,10 +94,12 @@ previous(){
   })
 }
 next(){
-  
+  this.loading = true;
+  this.notloading = false;
   this.data.getPeople(this.people?.next).subscribe(data=>{
     this.people = data; 
-
+    this.loading = false;
+    this.notloading = true;
     if(this.people?.next){
       this.disableprevious = false;
       this.disablenext = false;
@@ -105,7 +117,8 @@ next(){
  this.router.navigate(['starshipdetail'], {relativeTo:this.route});
  this.list = false;
  this.details = true;
- 
+ this.indexno +=1
+ localStorage.setItem('indexno',JSON.stringify(this.indexno));
  
  } 
  displaychild(){

@@ -16,19 +16,19 @@ export class DataserviceService {
 
   }
 
-  getImg(){
-    return this.http.get('https://picsum.photos/v2/list').pipe(
-      map((list: any) => {
+  // getImg(){
+  //   return this.http.get('https://picsum.photos/v2/list').pipe(
+  //     map((list: any) => {
 
-        return list.map((listItem:any)=> {
-          return {
-            ...listItem,
-            shown: false
-          }
-        })
+  //       return list.map((listItem:any)=> {
+  //         return {
+  //           ...listItem,
+  //           shown: false
+  //         }
+  //       })
         
-      })
-    );
-  }
+  //     })
+  //   );
+  // }
   }
 

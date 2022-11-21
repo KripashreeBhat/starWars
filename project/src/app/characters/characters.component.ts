@@ -18,6 +18,9 @@ export class CharactersComponent implements OnInit {
   name:any;
   disableprevious = true;
   disablenext = false;
+  indexno=0;
+  loading=true;
+  notloading=false;
   constructor(private data: DataserviceService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
@@ -30,7 +33,8 @@ export class CharactersComponent implements OnInit {
     
     if( sessionStorage.getItem('character')){
       this.people = JSON.parse((sessionStorage.getItem('character')) as any)
-  
+      this.loading = false;
+    this.notloading = true;
       
     }
     else {
@@ -42,6 +46,8 @@ export class CharactersComponent implements OnInit {
         console.log(users);
         
         this.people = users;
+        this.loading = false;
+        this.notloading = true;
         // this.people = this.people['results']
 
       },
@@ -64,24 +70,33 @@ displist(){
   this.list = true;
 }
 previous(){
+  this.loading = true;
+  this.notloading = false;
   this.data.getPeople(this.people?.previous).subscribe(data=>{
     this.people = data; 
-
+    this.loading = false;
+      this.notloading = true;
     if(this.people?.previous){
       this.disableprevious = false;
       this.disablenext = false;
+     
     sessionStorage.setItem('character',JSON.stringify(this.people))
     }
     else{
       this.disableprevious = true;
       this.disablenext = false;
+     
     } 
   })
 }
 next(){
-  
+  this.loading = true;
+  this.notloading = false;
   this.data.getPeople(this.people?.next).subscribe(data=>{
     this.people = data;  
+    this.loading = false;
+    this.notloading = true;
+
     if(this.people?.next){
       this.disableprevious = false;
       this.disablenext = false;
@@ -90,11 +105,14 @@ next(){
     else{
       this.disableprevious = false;
       this.disablenext = true;
+      
     }
   })
 }
  storename(name:any){
  console.log(name);
+ this.indexno +=1
+ localStorage.setItem('indexno',JSON.stringify(this.indexno));
  localStorage.setItem('details',JSON.stringify(name))
  this.router.navigate(['yoda'], {relativeTo:this.route});
  this.list = false;
@@ -105,6 +123,10 @@ next(){
   this.list = true;
   this.details = false;
   
+}
+displayparent(){
+  this.list =false;
+  this.details = true;
 }
 
 }

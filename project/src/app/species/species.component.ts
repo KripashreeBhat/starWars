@@ -8,7 +8,7 @@ import { DataserviceService } from '../dataservice.service';
 })
 export class SpeciesComponent implements OnInit {
 
- 
+  indexno=0;
   list = true;
   details = false;
   // array =['DARTH VADER','LUKE SKYWALKER','OBI-WAN KENOBI','YODA']
@@ -20,6 +20,8 @@ export class SpeciesComponent implements OnInit {
   name:any;
   disableprevious = true;
   disablenext = false;
+  loading=true;
+  notloading=false;
   constructor(private data: DataserviceService , private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
@@ -30,7 +32,10 @@ export class SpeciesComponent implements OnInit {
     sessionStorage.removeItem('films');
 
     if( sessionStorage.getItem('species')){
+      
       this.people = JSON.parse((sessionStorage.getItem('species')) as any)
+      this.loading = false;
+      this.notloading = true;
     }
     else{
 
@@ -39,7 +44,8 @@ export class SpeciesComponent implements OnInit {
     this.userSubs = this.data.getPeople(url).subscribe({
       next:(users)=> {
         console.log(users);
-        
+        this.loading = false;
+        this.notloading = true;
         this.people = users;
         // this.people = this.people['results']
 
@@ -71,8 +77,12 @@ export class SpeciesComponent implements OnInit {
 //   this.list = true;
 // }
 previous(){
+  this.loading = true;
+  this.notloading = false;
   this.data.getPeople(this.people?.previous).subscribe(data=>{
     this.people = data; 
+    this.loading = false;
+    this.notloading = true;
     if(this.people?.previous){ 
       this.disableprevious = false;
       this.disablenext = false;
@@ -85,10 +95,12 @@ previous(){
   })
 }
 next(){
-  
+  this.loading = true;
+  this.notloading = false;
   this.data.getPeople(this.people?.next).subscribe(data=>{
     this.people = data;  
-
+    this.loading = false;
+    this.notloading = true;
     if(this.people?.next){
       this.disableprevious = false;
       this.disablenext = false;
@@ -102,7 +114,9 @@ next(){
 }
  storename(name:any){
  console.log(name);
+ this.indexno +=1
  localStorage.setItem('details',JSON.stringify(name))
+ localStorage.setItem('indexno',JSON.stringify(this.indexno));
  this.router.navigate(['speciesdetail'], {relativeTo:this.route});
  this.list = false;
  this.details = true;

@@ -19,6 +19,9 @@ export class FilmsComponent implements OnInit {
   name:any;
   disableprevious = true;
   disablenext = true;
+  indexno=0;
+  loading=true;
+  notloading=false;
   constructor(private data: DataserviceService , private route: ActivatedRoute, private router: Router) { }
    
   ngOnInit(): void {
@@ -30,6 +33,8 @@ export class FilmsComponent implements OnInit {
     // this.disableprevious = true;
     if( sessionStorage.getItem('films')){
       this.people = JSON.parse((sessionStorage.getItem('films')) as any)
+      this.loading = false;
+      this.notloading = true;
     }
     else{
 
@@ -40,6 +45,8 @@ export class FilmsComponent implements OnInit {
         console.log(users);
         
         this.people = users;
+        this.loading = false;
+        this.notloading = true;
         // this.people = this.people['results']
 
       },
@@ -70,8 +77,12 @@ displist(){
   this.list = true;
 }
 previous(){
+  this.loading = true;
+  this.notloading = false;
   this.data.getPeople(this.people?.previous).subscribe(data=>{
     this.people = data; 
+    this.loading = false;
+      this.notloading = true;
     if(this.people?.previous){ 
     sessionStorage.setItem('films',JSON.stringify(this.people))
     this.disableprevious = false;
@@ -84,8 +95,11 @@ previous(){
   })
 }
 next(){
-  
+  this.loading = true;
+  this.notloading = false;
   this.data.getPeople(this.people?.next).subscribe(data=>{
+    this.loading = false;
+    this.notloading = true;
     this.people = data; 
     if(this.people?.next){ 
       this.disableprevious = false;
@@ -100,7 +114,9 @@ next(){
 }
  storename(name:any){
  console.log(name);
- localStorage.setItem('details',JSON.stringify(name))
+ this.indexno +=1
+ localStorage.setItem('indexno',JSON.stringify(this.indexno));
+ localStorage.setItem('details',JSON.stringify(name));
  this.router.navigate(['filmdetail'], {relativeTo:this.route});
  this.list = false;
  this.details = true;

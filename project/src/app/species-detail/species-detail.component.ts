@@ -7,10 +7,11 @@ import { DataserviceService } from '../dataservice.service';
 })
 export class SpeciesDetailComponent implements OnInit {
 
-
+  imageno:any;
   details :any;
   info:any;
   userSubs :any;
+  url:any;
   constructor(private service: DataserviceService) { 
    
   }
@@ -31,6 +32,8 @@ getdetails(){
   this.details = JSON.parse(localStorage.getItem('details')as any);
   // console.log(this.details);
   // console.log(this.details['name']);
+  this.imageno=localStorage.getItem('indexno');
+ this.url = `https://picsum.photos/500/300?random=${this.imageno+1}`;
 }
 
 }

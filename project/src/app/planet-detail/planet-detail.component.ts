@@ -10,6 +10,8 @@ export class PlanetDetailComponent implements OnInit {
   details :any;
   info:any;
   userSubs :any;
+  imageno:any;
+  url:any;
   constructor(private service: DataserviceService) { 
    
   }
@@ -29,6 +31,8 @@ export class PlanetDetailComponent implements OnInit {
 getdetails(){
   this.details = JSON.parse(localStorage.getItem('details')as any);
   console.log(this.details);
+  this.imageno=localStorage.getItem('indexno');
+ this.url = `https://picsum.photos/500/300?random=${this.imageno+1}`;
   // console.log(this.details['name']);
 }
 

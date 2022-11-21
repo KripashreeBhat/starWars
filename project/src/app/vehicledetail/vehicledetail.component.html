@@ -2,26 +2,26 @@
 <div class="container">
    <div class="img-detail">
     <div class="img">
-        <img src="assets/yoda.jpg" alt="yoda pic" >
+        <img [src]="url" alt="yoda pic" >
     </div>
 
     <div class="detail">
         <h1>{{details.name | titlecase : true}}</h1>
         <section class="scroll">
             <div class="info">
-                <p class="key">Cargo Capacity : </p>
+                <p class="key">Cargo&nbsp;Capacity&nbsp;: </p>
                 <p class="value">&nbsp;{{details.cargo_capacity | titlecase :false}}</p>
             </div>
             <div class="info">
-                <p class="key">Cost In Credits :</p>
-                <p class="value">&nbsp;{{details.cost_in_credits}}</p>
+                <p class="key">Cost&nbsp;In&nbsp;Credits&nbsp;:</p>
+                <p class="value">&nbsp;{{details.cost_in_credits  | titlecase :false}}</p>
             </div>
             <div class="info">
-                <p class="key">Crew :</p>
+                <p class="key">Crew&nbsp;:</p>
                 <p class="value">&nbsp;{{details.crew| titlecase : false}}</p>
             </div>
             <div class="info">
-                <p class="key">Passengers :</p>
+                <p class="key">Passengers&nbsp;:</p>
                 <p class="value">&nbsp;{{details.passengers}}</p>
             </div>
             <div class="info">
@@ -29,20 +29,20 @@
                 <p class="value">{{details.model}}</p>
             </div>
             <div class="info">
-                <p class="key">Length :</p>
+                <p class="key">Length&nbsp;:</p>
                 <p class="value">&nbsp;{{details.length | titlecase : false}}</p>
             </div>
             <div class="info">
-                <p class="key">Max Atmosphering Speed:</p>
+                <p class="key">Max&nbsp;Atmosphering&nbsp;Speed&nbsp;:</p>
                 <p class="value">&nbsp;{{details.max_atmosphering_speed}}</p>
             </div>
             <div class="info">
-                <p class="key">Manufacturer:</p>
-                <p class="value">&nbsp;{{details.manufacturer}}</p>
+                <p class="key">Vehicle&nbsp;Class&nbsp;:</p>
+                <p class="value">&nbsp;{{details.vehicle_class  | titlecase :false}}</p>
             </div>
             <div class="info">
-                <p class="key">Vehicle Class:</p>
-                <p class="value">&nbsp;{{details.vehicle_class}}</p>
+                <p class="key">Manufacturer&nbsp;:</p>
+                <p class="value">&nbsp;{{details.manufacturer}}</p>
             </div>
             <!-- <div class="info">
                 <p class="key">Designation :</p>

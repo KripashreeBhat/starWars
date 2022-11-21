@@ -1,25 +1,31 @@
-<!-- <app-nav-bar></app-nav-bar> -->
-<div class="full" >
-    <div class="details" *ngIf ='details' (click)="displaychild()" >
-        <router-outlet></router-outlet>
-        
-    </div>
-    <div class="nav" *ngIf="list">
+<div class="details" *ngIf ='details' (click)="displaychild()" >
+    <router-outlet></router-outlet>
+</div>
+<div class="navload" *ngIf="loading">
+    <app-nav-bar></app-nav-bar>
+<div class="loading-container" *ngIf="loading">
+    <div class="loading"></div>
+    <div id="loading-text">loading</div>
+</div>
+</div>
+<div class="nav" *ngIf="list  && notloading" >
         <app-nav-bar></app-nav-bar>
-<div class="container">
-    <div class="list-items" >
-    <div class="item"  *ngFor = "let list of people.results">
-        <a (click) = "storename(list)">{{list.name}}</a>
+        <div class="container"  >
+        <div class="list-items">
+            <div class="item"  *ngFor = "let list of people.results"  > 
+                
+                <a (click) = "storename(list)" >{{list.name}}</a>
     </div>
-   
+    
     </div>
-    <div class="btn">
+    <div class="btn" *ngIf="list && notloading">
         <div class="fn-btn">
-        <button (click)="previous()" [class.displayprev]="disableprevious">PREVIOUS</button>
+        <button (click)="previous()" [class.displayprev]="disableprevious" [disabled]="disableprevious">PREVIOUS</button>
     </div>
-   <div class="fn-btn" (click)="next()">
-        <button [class.displaynext] = 'disablenext' >NEXT</button>
+    <div class="fn-btn" (click)="next()">
+        <button [class.displaynext] = 'disablenext' [disabled]="disablenext">NEXT</button>
     </div> 
-    </div>
+</div>
+
 </div>
 </div>

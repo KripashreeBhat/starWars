@@ -10,6 +10,8 @@ export class YodaDetailComponent implements OnInit {
   details :any;
   info:any;
   userSubs :any;
+  imageno:any;
+  url:any;
   product= [{
    url: 'https://www.gstatic.com/webp/gallery3/1.png'
   },
@@ -29,7 +31,8 @@ array =['assets/lukeskywalker.png']
   
   getdetails(){
     this.details = JSON.parse(localStorage.getItem('details')as any);
-    
+    this.imageno=localStorage.getItem('indexno');
+    this.url = `https://picsum.photos/500/300?random=${this.imageno+1}`;
   }
  
 }
