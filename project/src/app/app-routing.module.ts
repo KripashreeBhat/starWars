@@ -15,6 +15,7 @@ import { StarshipDetailComponent } from './starship-detail/starship-detail.compo
 import { VehicledetailComponent } from './vehicledetail/vehicledetail.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent},
 
   // { path: 'yoda' , component:YodaDetailComponent},
   // { path: 'planetdetail', component: PlanetDetailComponent },

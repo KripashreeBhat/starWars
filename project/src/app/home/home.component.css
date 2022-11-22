@@ -5,8 +5,8 @@ p{
 .menu{
     /* border: 1px solid white; */
     width:50%;
-    height:55vh;
-    margin-top: 3%;
+    /* height:55vh; */
+    margin-top: 5%;
     margin-right:auto;
     margin-left: auto;
     display: grid;
@@ -65,7 +65,7 @@ img:hover{
     .menu{
         /* border: 1px solid white; */
         width:70%;
-        height:55vh;
+        /* height:55vh; */
         margin-top: 3rem;
         margin-right:auto;
         margin-left: auto;
@@ -73,8 +73,9 @@ img:hover{
         /* align-items: center; */
         grid-template-columns: auto auto;
         /* row-gap:1px; */
-        column-gap: 10%;
+        column-gap: 20%;
         cursor: pointer;
+        justify-content: center;
     }
    
     p{
@@ -82,15 +83,18 @@ img:hover{
         /* margin-top: 0.7rem; */
     }
     .image{
-        height:30%;
+        /* height:30%; */
+        /* height:15px; */
+        width:110px;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
+       
         /* border: 1px solid white;   */
     }
     .img{
-        height:13.5vh;
+        /* height:13.5vh; */
         /* width:vw; */
         margin-top: -2rem;
         margin-bottom: -0.5rem;
@@ -98,7 +102,7 @@ img:hover{
          display: flex;
     }
     .img img{
-        width:80%;
+        /* width:80%; */
     }
     
 }
@@ -108,7 +112,7 @@ img:hover{
     .menu{
         /* border: 1px solid white; */
         width:70%;
-        height:55vh;
+        /* height:55vh; */
         margin-top: 3rem;
         margin-right:auto;
         margin-left: auto;
@@ -118,13 +122,15 @@ img:hover{
         row-gap:1px;
         column-gap: 10%;
         cursor: pointer;
+        justify-content: center;
     }
    
     p{
         font-size: 0.8rem;
     }
     .image{
-        height:30%;
+        /* height:30%; */
+        width:180px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -132,11 +138,11 @@ img:hover{
         /* border: 1px solid white;   */
     }
     .img{
-        height:13.5vh;
+        /* height:13.5vh; */
         /* width:20vw; */
         margin-top: -2rem;
         margin-bottom: -0.5rem;
-         border: 1px solid pink; 
+         /* border: 1px solid pink;  */
          display: flex;
     } 
     .img img{

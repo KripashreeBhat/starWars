@@ -1,17 +1,17 @@
 .container{
     /* border:1px solid white; */
-    height:18vh;
+    /* height:18vh; */
     /* display: flex;
     align-self: center;
     justify-content: center; */
     color:white;
     /* position: absolute; */
-    position: fixed;
+    /* position: fixed; */
     
     left:0;
     right:0;
-    bottom: 0;
-    
+    bottom: 0rem;
+    /* margin-top: 20rem; */
     border-top: 1px solid #054979;
 }
 .img-item{
@@ -99,7 +99,7 @@
 }
 @media(max-width:500px){
     .container{
-        height:25vh;
+        /* height:25vh; */
     }
     .img{
         display: none;
@@ -259,6 +259,4 @@
             width:100%;
         }
     }
- @media(max-width:1024px){
-
- }
+ 

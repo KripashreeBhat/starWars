@@ -2,24 +2,16 @@
     /* border: 1px solid white; */
     background-color: transparent;
     color:white;
-    height: 55vh;
-    max-width:20%;
-    /* position: fixed; */
+    max-width:350px;
     margin:auto;
     margin-top:1rem;
-    /* display: flex; */
-    /* margin-left:40%; */
-    /* margin-right:auto; */
+    margin-bottom:1rem;
 }
 .item{
-    /* margin-top: 2rem; */
-    /* margin-bottom: 1rem; */
-    width:100%;
-    height:5vh;
+    max-width:350px;
 }
 .item:hover{
     background-color: rgba(0,171,255,0.4);
-    
 }
 .local:hover{
     background-color: rgba(0,171,255,0.4);
@@ -28,9 +20,6 @@
 .list-items{
     display: flex;
     flex-direction: column;
-    /* justify-content: center;
-    align-items:center; */
-    height:50vh;
     margin-top:1rem;
     cursor:pointer;
     /* border: 1px solid rgb(90, 224, 13); */
@@ -44,17 +33,13 @@ a{
     text-decoration: none;
     color:white;
     font-weight:600;
-    padding-top:0.6rem;
-    /* margin-bottom: 8%; */
     text-align: center;
-    
+    line-height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .btn{
-    margin-top: 2%;
-    /* border:1px solid red; */
     display: flex;
     justify-content: center;
     justify-content: space-between;
@@ -62,10 +47,7 @@ a{
 button{
     cursor: pointer;
     background-color: transparent;
-    /* color: #fff; */
     color:white;
-    /* height:2.8rem; */
-    /* width:40%; */
     font-size:0.9rem;
     font-weight:600;
     border:none
@@ -75,22 +57,18 @@ button{
   display: flex;
   justify-content: center;
   height:2.2rem;
-  /* border:1px solid white;  */
-  /* background-color: #7692A72f ; */
-  /* background-color: rgba(0,171,255,0.4);  */
   background-color: rgba(0,168,255,0.4);
 }
 .displayprev , .displaynext{
     /* background-color: blue; */
     color:#7692A7;
 }
-
 @media(max-width:900px){
     .container{
         /* border: 1px solid white; */
         background-color: transparent;
         color:white;
-        height: 55vh;
+        /* height: 55vh; */
         max-width:50%;
         /* position: fixed; */
         margin:auto;
@@ -119,44 +97,30 @@ button{
 
 @media(max-width:500px){
     .container{
-        /* border: 1px solid white; */
-        background-color: transparent;
-        color:white;
-        height: 48vh;
-        max-width:70%;
+        max-width: 380px;
         margin:auto;
+        margin-bottom:1rem;
     }
     .list-items{
-        /* border: 1px solid white; */
         display: flex;
         flex-direction: column;
-        font-size: 1rem;
-        padding-bottom: 3rem;
-        height:34vh;
         margin-top: 1rem;
-        /* border: 1px solid rgb(90, 224, 13); */
-    
     }
     .fn-btn{
-        width:45%;
-        display: flex;
-        justify-content: center;
-        height:2.2rem;
         border:none;
-        /* border:1px solid white;  */
         background-color: rgba(0,171,255,0.4); 
       }
     button{
-        cursor: pointer;
-        /* background-color: rgba(0,171,255,0.4); */
-        color: #fff;
         font-size:0.8rem;
         border:none
     }
     a{
-        padding-top:0.2rem;
-        /* line-height: 1rem; */
+        line-height: 35px;
     }
+    .item{
+        max-width: 380px;
+    }
+   
 }
 
 /* details */
@@ -229,9 +193,9 @@ button{
 }
 .loading-container,
 .loading {
-    height: 100px;
+    height: 80px;
     position: relative;
-    width: 100px;
+    width: 80px;
     border-radius: 100%;
 }
 
@@ -272,11 +236,11 @@ button{
     font-family: "Helvetica Neue, "Helvetica", ""arial";
     font-size: 10px;
     font-weight: bold;
-    margin-top: 45px;
+    margin-top: 32px;
     opacity: 0;
     position: absolute;
     text-align: center;
     text-transform: uppercase;
     top: 0;
-    width: 100px;
+    width: 82px;
 }
